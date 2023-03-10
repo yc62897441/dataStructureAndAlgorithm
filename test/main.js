@@ -3,7 +3,7 @@ const b = []
 const c = []
 
 // for (let i = 0; i < 30000000; i++) {
-for (let i = 0; i < 3000000; i++) {
+for (let i = 0; i < 30000000; i++) {
     a.push(Math.floor(Math.random() * 10000))
     b.push(Math.floor(Math.random() * 10000))
     c.push(Math.floor(Math.random() * 10000))
@@ -25,7 +25,7 @@ console.log(`It takes ${timeFunc2} seconds to run push each item of c to b`)
 
 
 const d = []
-for (let i = 0; i < 300000000; i++) {
+for (let i = 0; i < 30000000; i++) {
     d.push(Math.floor(Math.random() * 10000))
 }
 const time5 = window.performance.now()
