@@ -2,7 +2,7 @@
 // 寫一個 function，收集所以在 array of arrays 中的值，並收集到且回傳 array。
 
 // 我的解答
-let arrs = [[[['a', [['b', ['c']], ['d']]], [['e']], [[['f', 'g', 'h', ]]]]]]
+let arrs = [[[['a', [['b', ['c']], ['d']]], [['e']], [[['f', 'g', 'h']]]]]]
 
 const aaa = []
 function fs(array) {
@@ -18,18 +18,18 @@ fs(arrs)
 console.log(aaa)
 
 // 多封裝一層
-function aa(array) {
+function collector(array1) {
     const result = []
-    const bb = (array) => {
-        for (let i = 0; i < array.length; i++) {
-            if (Array.isArray(array[i])) {
-                bb(array[i])
+    const helper = (array2) => {
+        for (let i = 0; i < array2.length; i++) {
+            if (Array.isArray(array2[i])) {
+                helper(array2[i])
             } else {
-                result.push(array[i])
+                result.push(array2[i])
             }
         }
     }
-    bb(array)
+    helper(array1)
     return result
 }
-console.log(aa(arrs))
+console.log(collector(arrs))
