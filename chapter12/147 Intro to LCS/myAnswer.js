@@ -27,6 +27,27 @@ function lcs(str1, str2) {
         }
     }
 
+    // str1 當前要比對的字元起始位置 i。
+    for (let i = 0; i < str2.length; i++) {
+        let tempLcs = ''
+        let startIndex = i
+
+        // str2 當前要比對的字元起始位置 j。
+        for (let j = 0; j < str1.length; j++) {
+            let currentLetter = str2[startIndex]
+            count1++
+
+            if (currentLetter === str1[j]) {
+                tempLcs = tempLcs + currentLetter
+                startIndex = startIndex + 1
+            }
+        }
+
+        if (tempLcs.length > currentLcs.length) {
+            currentLcs = tempLcs
+        }
+    }
+
     return currentLcs
 }
 
