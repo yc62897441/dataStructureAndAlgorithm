@@ -1,3 +1,5 @@
+// 有錯誤，有時候捨棄當前 str1[i] 不列入 currentLcs，反而可以在後面找出更長的 subsequence
+
 // 我自己想的
 let str1 = 'ATAACGCGCTGCTCGGGT'
 let str2 = 'TCAATCAGGATCCGCTGA'
