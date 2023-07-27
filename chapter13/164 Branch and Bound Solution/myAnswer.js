@@ -1,3 +1,5 @@
+// 我自己想的
+
 // 等待裝入背包的項目
 const items = [
     {
@@ -158,11 +160,7 @@ function fillElse(node) {
     // 接受分數形式(Fractional)，來計算「潛在可能的最大利益」
     items.forEach((item) => {
         if (node.weight >= maxWeight) return
-        if (
-            !node.accept.includes(item.name) &&
-            !node.reject.includes(item.name) &&
-            !node.includes.includes(item.name)
-        ) {
+        if (!node.accept.includes(item.name) && !node.reject.includes(item.name) && !node.includes.includes(item.name)) {
             const leftWeight = maxWeight - node.weight
             node.weight += leftWeight
             node.c += item.rate * leftWeight
