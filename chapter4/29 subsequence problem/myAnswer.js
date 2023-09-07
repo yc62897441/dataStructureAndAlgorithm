@@ -16,11 +16,12 @@ function isSubsequenceString(str1, str2) {
     return false
 }
 
-// console.log(isSubsequenceString('book', 'brooklyn')) // true
+console.log(isSubsequenceString('book', 'brooklyn')) // true
+// console.log(isSubsequenceString('brooklyn', 'book')) // false
 // console.log(isSubsequenceString('', 'ab dc')) // true
 // console.log(isSubsequenceString('ab c', 'ab dc')) // true
 // console.log(isSubsequenceString('abc', 'abc')) // true
-console.log(isSubsequenceString('abc', 'acb')) // false
+// console.log(isSubsequenceString('abc', 'acb')) // false
 
 // 教案解法
 function isSubsequence(str1, str2) {
