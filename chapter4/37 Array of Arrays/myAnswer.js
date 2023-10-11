@@ -4,23 +4,32 @@
 // 我的解答
 let arrs = [[[['a', [['b', ['c']], ['d']]], [['e']], [[['f', 'g', 'h']]]]]]
 
-const aaa = []
-function fs(array) {
-    array.forEach((element) => {
-        if (typeof element === 'object') {
-            fs(element)
-        } else {
-            aaa.push(element)
-        }
-    })
-}
-fs(arrs)
-console.log(aaa)
+function deconstructArr(arrs) {
+    const result = []
+    fn(arrs)
 
+    function fn(array) {
+        array.forEach((element) => {
+            if (Array.isArray(element)) {
+                fn(element)
+            } else {
+                result.push(element)
+            }
+        })
+    }
+
+    return result
+}
+console.log(deconstructArr(arrs)) // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+// 教案解答
 // 多封裝一層
 function collector(array1) {
     const result = []
-    const helper = (array2) => {
+    helper(array1)
+    return result
+
+    function helper(array2) {
         for (let i = 0; i < array2.length; i++) {
             if (Array.isArray(array2[i])) {
                 helper(array2[i])
@@ -29,7 +38,5 @@ function collector(array1) {
             }
         }
     }
-    helper(array1)
-    return result
 }
 console.log(collector(arrs))
